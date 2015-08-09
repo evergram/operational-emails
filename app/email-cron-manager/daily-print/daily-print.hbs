@@ -1,0 +1,10 @@
+<p>Hi,</p>
+<p>Below are the image sets that require printing today (<strong>{{date}}</strong>).</p>
+<ul>
+    {{#each imageSets}}
+    <li><strong>{{this.username}}</strong>: {{this.numberOfImages}}</li>
+    {{/each}}
+</ul>
+<p>The total number of images required to print is: {{total}}.</p>
+<p>Thanks,</p>
+<p>The Pixy Team</p>
