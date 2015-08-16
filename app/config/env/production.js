@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-    emails: {
+    jobs: {
         'daily-print': {
             to: [
                 'hello@printwithpixy.com',

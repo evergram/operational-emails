@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-    emails: {
+    jobs: {
         'daily-print': {
             to: [
                 'josh@printwithpixy.com'
@@ -14,7 +14,7 @@ module.exports = {
             subject: 'Today\'s Pixy Print Summary',
             template: 'daily-print.hbs',
             schedule: {
-                cronTime: '00 00 07 * * *',
+                cronTime: '*/5 * * * * *',
                 start: false,
                 timeZone: 'Australia/Melbourne'
             },
@@ -28,11 +28,11 @@ module.exports = {
             subject: 'This Weeks Pixy Print Summary',
             template: 'weekly-print.hbs',
             schedule: {
-                cronTime: '00 00 07 * * 1',
+                cronTime: '*/5 * * * * *',
                 start: false,
                 timeZone: 'Australia/Melbourne'
             },
-            active: true
+            active: false
         }
     }
 };
