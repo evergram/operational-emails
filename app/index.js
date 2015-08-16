@@ -6,11 +6,11 @@
 
 var common = require('evergram-common');
 var logger = common.utils.logger;
-var emailCronManager = require('./email-cron-manager');
+var cronManager = new (require('./cron-manager'))();
 
 //watch for kill/shutdown
 process.on('SIGINT', function() {
-    emailCronManager.stop();
+    cronManager.stop();
     logger.warning('Shutting down');
     process.exit(0);
 });
@@ -18,5 +18,5 @@ process.on('SIGINT', function() {
 //init db
 common.db.connect();
 
-//start the email scheduler
-emailCronManager.start();
+//start the cron manager
+cronManager.start();

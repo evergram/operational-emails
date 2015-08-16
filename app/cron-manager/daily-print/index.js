@@ -8,11 +8,14 @@ var moment = require('moment');
 var common = require('evergram-common');
 var printManager = common.print.manager;
 
+function DailyPrint() {
+}
+
 /**
  *
  * @returns {*|promise}
  */
-module.exports = function() {
+DailyPrint.prototype.run = function() {
     var deferred = q.defer();
     var currentDate = getToday().utc();
 
@@ -56,6 +59,8 @@ function compileTemplateData(imageSets) {
         var numberOfImages = imageSet.getNumberOfImages();
         if (numberOfImages > 0) {
             data.imageSets.push({
+                firstName: imageSet.user.firstName,
+                lastName: imageSet.user.lastName,
                 username: imageSet.user.instagram.username,
                 numberOfImages: numberOfImages
             });
@@ -75,3 +80,5 @@ function getToday() {
         tz('Australia/Melbourne').
         startOf('day');
 }
+
+module.exports = new DailyPrint();

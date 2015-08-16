@@ -1,0 +1,19 @@
+<p>Hi,</p>
+<p>Below are the image sets we expect to see this week (from <strong>{{date.from}}</strong> to
+    <strong>{{date.to}}</strong>).</p>
+
+{{#each imageSets}}
+    <p>{{this.date}}</p>
+    {{#if users}}
+        <ul>
+            {{#each users}}
+                <li><strong>{{firstName}} {{lastName}} ({{username}})</strong>: {{numberOfImages}}</li>
+            {{/each}}
+        </ul>
+    {{else}}
+        &mdash;
+    {{/if}}
+{{/each}}
+<p>The expected total is: {{total}}. <strong>Note</strong>: this may increase as these are not final numbers.</p>
+<p>Thanks,</p>
+<p>The Pixy Team</p>
