@@ -18,7 +18,7 @@ module.exports = {
                 start: false,
                 timeZone: 'Australia/Melbourne'
             },
-            active: true
+            active: false
         },
         'weekly-print': {
             to: [

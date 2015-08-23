@@ -15,7 +15,7 @@ module.exports = {
             subject: process.env.EMAIL_DAILY_PRINT_SUBJECT || 'Today\'s Pixy Print Summary',
             template: 'daily-print.hbs',
             schedule: {
-                cronTime: '00 00 07 * * *',
+                cronTime: process.env.EMAIL_DAILY_PRINT_CRONTIME || '00 00 07 * * *',
                 start: false,
                 timeZone: 'Australia/Melbourne'
             },
@@ -30,7 +30,7 @@ module.exports = {
             subject: process.env.EMAIL_WEEKLY_PRINT_SUBJECT || 'This Weeks Pixy Print Summary',
             template: 'weekly-print.hbs',
             schedule: {
-                cronTime: '00 00 07 * * 1',
+                cronTime: process.env.EMAIL_WEEKLY_PRINT_CRONTIME || '00 00 07 * * mon',
                 start: false,
                 timeZone: 'Australia/Melbourne'
             },
