@@ -36,7 +36,12 @@ DailyPrint.prototype.run = function() {
             }
         }).
         then(function(imageSets) {
-            deferred.resolve(compileTemplateData(imageSets));
+            var data = compileTemplateData(imageSets);
+            if (data.total > 0) {
+                deferred.resolve(data);
+            } else {
+                deferred.reject('No image sets today');
+            }
         });
 
     return deferred.promise;

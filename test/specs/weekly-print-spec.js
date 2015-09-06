@@ -7,10 +7,19 @@ var printManager = common.print.manager;
 
 //local dependencies
 var weeklyPrint = require('../../app/cron-manager/weekly-print');
+var sandbox;
 
 describe('Weekly Print Job', function() {
+    beforeEach(function() {
+        sandbox = sinon.sandbox.create();
+    });
+
+    afterEach(function() {
+        sandbox.restore();
+    });
+
     it('should return the correct weekly print data', function(done) {
-        var printManagerStub = sinon.stub(printManager, 'findAll');
+        var printManagerStub = sandbox.stub(printManager, 'findAll');
         printManagerStub.returns(q.fcall(function() {
             return [
                 {
