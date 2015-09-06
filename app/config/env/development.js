@@ -18,7 +18,7 @@ module.exports = {
                 start: false,
                 timeZone: 'Australia/Melbourne'
             },
-            active: false
+            active: true
         },
         'weekly-print': {
             to: [
@@ -32,7 +32,7 @@ module.exports = {
                 start: false,
                 timeZone: 'Australia/Melbourne'
             },
-            active: false
+            active: true
         }
     }
 };
