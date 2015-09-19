@@ -26,6 +26,9 @@ WeeklyPrint.prototype.run = function() {
     printManager.
         findAll({
             criteria: {
+                'user.billing.option': {
+                    $not: /[a-zA-Z]+\\-LIMIT\\-([0-9]+)/
+                },
                 endDate: {
                     $gte: new Date(start),
                     $lt: new Date(end)
