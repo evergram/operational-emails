@@ -1,5 +1,7 @@
 'use strict';
 
+var PIXY_EMAIL = process.env.PIXY_EMAIL || 'hello@printwithpixy.com';
+
 /**
  * Expose
  */
@@ -8,7 +10,7 @@ module.exports = {
     jobs: {
         'daily-print': {
             to: [
-                'hello@printwithpixy.com',
+                PIXY_EMAIL,
                 process.env.EMAIL_DAILY_PRINT_TO
             ],
             from: 'hello@printwithpixy.com',
@@ -23,7 +25,7 @@ module.exports = {
         },
         'weekly-print': {
             to: [
-                'hello@printwithpixy.com',
+                PIXY_EMAIL,
                 process.env.EMAIL_WEEKLY_PRINT_TO
             ],
             from: 'hello@printwithpixy.com',
